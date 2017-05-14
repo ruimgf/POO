@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Main {
 
-	public Main() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public static void main(String[] args) {
+		if(args.length<1){
+			System.out.println("Wrong Use : Main <i>");
+			System.exit(1);
+		}
 		int n = Integer.parseInt(args[0]);
 		if(n<1){
 			System.out.println("Input number must be greater than 1");
@@ -23,9 +23,8 @@ public class Main {
 				boolean flag = false;
 				labs2[i] = new Lab2();
 			 	for (int j = 0; j < 10 ; j++) {
-			 		Lab1 l = new Lab1(random.nextInt(),0);
+			 		Lab1 l = new Lab1(random.nextInt(10),0);
 					if(!labs2[i].associateLab1(l)){
-						System.out.println("oal");
 						flag = true;
 						continue;
 					}
